@@ -39,7 +39,7 @@ Factur-X milestones in France
     - medium organisations (ETI) should produce Factur-X invoices
 
 * 1 January 2026 :
-    - organisations (PME, TPE, Micro-entreprises) should produce Factur-X invoices
+    - all organisations (PME, TPE, Micro-entreprises) should produce Factur-X invoices
 
 
 Documentation
