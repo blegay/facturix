@@ -8,6 +8,8 @@ Facturix is a 4D v19 component that will help 4D developers produce Factur-X xml
 
 Facturix is opensource and free to use.
 
+Take a look at "factx_sampleCode".
+
 NOTE : the component uses traditional 4D command set so it can be backported to older versions of 4D (4D v16+).
 
 About Factur-x
