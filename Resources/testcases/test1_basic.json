@@ -1,0 +1,70 @@
+﻿{
+	"profile": "BASIC",
+	"exchangedDocument": {
+		"id": "471102",
+		"typeCode": "380",
+		"issueDateTime": "2022-03-05",
+		"notes": [
+			{
+				"content": "Rechnung gemäß Bestellung vom 01.03.2020."
+			},
+			{
+				"content": "Lieferant GmbH\rLieferantenstraße 20\r80333 München\rDeutschland\rGeschäftsführer: Hans Muster\rHandelsregisternummer: H A 123"
+			},
+			{
+				"content": "Unsere GLN: 4000001123452\nIhre GLN: 4000001987658\nIhre Kundennummer: GE2020211\n\n\nZahlbar innerhalb 30 Tagen netto bis 04.04.2020, 3% Skonto innerhalb 10 Tagen bis 15.03.2020."
+			}
+		]
+	},
+	"lines": [
+		{
+			"lineNo": 1,
+			"name": "GTIN: 4012345001235\rUnsere Art.-Nr.: TB100A4\rTrennblätter A4",
+			"netPrice": 9.9,
+			"quantity": 20,
+			"unit": "C62",
+			"vatCategory": "S",
+			"vatRate": 20,
+			"lineTotalAmount": 198
+		}
+	],
+	"seller": {
+		"name": "Lieferant GmbH",
+		"siret": "12345678900014",
+		"noTVA": "FR23123456789",
+		"postcode": "80333",
+		"lineOne": "Lieferantenstraße 20",
+		"cityName": "München",
+		"countryID": "DE"
+	},
+	"buyer": {
+		"name": "Kunden AG Mitte",
+		"siret": "98765432100034",
+		"postcode": "69876",
+		"lineOne": "Hans Muster",
+		"lineTwo": "Kundenstraße 15",
+		"cityName": "Frankfurt",
+		"countryID": "DE"
+	},
+	"tradeDelivery": {
+		"actualDelivery": "2022-03-05"
+	},
+	"settlement": {
+		"currency": "EUR",
+		"applicableTradeTax": [
+			{
+				"calulatedAmount": 37.62,
+				"basisAmount": 198,
+				"categoryCode": "S",
+				"rateApplicablePercent": 19
+			}
+		],
+		"lineTotalAmount": 198,
+		"chargeTotalAmount": 0,
+		"allowanceTotalAmount": 0,
+		"taxBasisTotalAmount": 198,
+		"taxTotalAmount": 37.62,
+		"grandTotalAmount": 235.62,
+		"duePayableAmount": 235.62
+	}
+}

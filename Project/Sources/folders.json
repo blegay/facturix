@@ -1,0 +1,31 @@
+{
+	"Classes par défaut": {},
+	"Dossier par défaut": {
+		"groups": [
+			"Classes par défaut",
+			"Formulaires par défaut",
+			"Méthodes projet par défaut",
+			"Tables par défaut"
+		]
+	},
+	"env": {
+		"methods": [
+			"env_versionStr"
+		]
+	},
+	"Formulaires par défaut": {},
+	"Méthodes projet par défaut": {},
+	"private": {
+		"methods": [
+			"Compiler_Methods"
+		]
+	},
+	"Tables par défaut": {},
+	"xml": {
+		"methods": [
+			"xml_blobBomSize",
+			"xml_blobEraseBom"
+		]
+	},
+	"trash": {}
+}
