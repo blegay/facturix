@@ -203,15 +203,15 @@ If (ok=1)
 		//DOM SET XML ATTRIBUTE($vt_domRefTmp;"format";"102")
 		
 		//DOM SET XML ELEMENT VALUE($vt_domRefTmp;\
-																																																																																				String(Year of($vo_data.tradeDelivery.actualDelivery);"0000")+\
-																																																																																				String(Month of($vo_data.tradeDelivery.actualDelivery);"00")+\
-																																																																																				String(Day of($vo_data.tradeDelivery.actualDelivery);"00"))
+																																																																																							String(Year of($vo_data.tradeDelivery.actualDelivery);"0000")+\
+																																																																																							String(Month of($vo_data.tradeDelivery.actualDelivery);"00")+\
+																																																																																							String(Day of($vo_data.tradeDelivery.actualDelivery);"00"))
 	End if 
 	
 	
 	If (True:C214)  // "ram:ApplicableHeaderTradeSettlement"
 		
-		//         <ram:ApplicableHeaderTradeSettlement>
+		//         <ram:ApplicableHeaderTradeSettlement>Due
 		//             <ram:SpecifiedTradeSettlementHeaderMonetarySummation>
 		//                 <ram:LineTotalAmount>198</ram:LineTotalAmount>
 		//                 <ram:ChargeTotalAmount>0</ram:ChargeTotalAmount>
@@ -239,6 +239,15 @@ If (ok=1)
 			End if 
 			
 		End for each 
+		
+		
+		If ($vo_data.settlement.dueDate#Null:C1517)
+			C_TEXT:C284($vt_domRefSpecifiedTrdPmtTrms; $vt_domRefDueDate)
+			$vt_domRefSpecifiedTrdPmtTrms:=DOM Append XML child node:C1080($vt_domRefSettlement; XML ELEMENT:K45:20; "ram:SpecifiedTradePaymentTerms")  // facturx-BT-20
+			$vt_domRefDueDate:=DOM Append XML child node:C1080($vt_domRefSpecifiedTrdPmtTrms; XML ELEMENT:K45:20; "ram:DueDateDateTime")  // facturx-BT-9-00
+			factx__xmlAddDateChildElement($vt_domRefDueDate; $vo_data.settlement.dueDate)
+		End if 
+		
 		
 		C_TEXT:C284($vt_domRefSummation)
 		$vt_domRefSummation:=DOM Append XML child node:C1080($vt_domRefSettlement; XML ELEMENT:K45:20; "ram:SpecifiedTradeSettlementHeaderMonetarySummation")  // facturx-BG-22
