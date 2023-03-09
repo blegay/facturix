@@ -211,7 +211,7 @@ If (ok=1)
 	
 	If (True:C214)  // "ram:ApplicableHeaderTradeSettlement"
 		
-		//         <ram:ApplicableHeaderTradeSettlement>Due
+		//         <ram:ApplicableHeaderTradeSettlement>
 		//             <ram:SpecifiedTradeSettlementHeaderMonetarySummation>
 		//                 <ram:LineTotalAmount>198</ram:LineTotalAmount>
 		//                 <ram:ChargeTotalAmount>0</ram:ChargeTotalAmount>
