@@ -57,7 +57,7 @@ Case of
 			"quantity"; 20; \
 			"unit"; "C62"; \
 			"vatCategory"; "S"; \
-			"vatRate"; 20; \
+			"vatRate"; 19; \
 			"lineTotalAmount"; 198))
 		
 		$vo_data.seller:=New object:C1471
@@ -95,6 +95,7 @@ Case of
 		// "ram:ApplicableHeaderTradeSettlement"
 		$vo_data.settlement:=New object:C1471
 		$vo_data.settlement.currency:="EUR"  // facturx-BT-5
+		$vo_data.settlement.dueDate:=!2022-04-05!  // facturx-BT-9
 		
 		$vo_data.settlement.applicableTradeTax:=New collection:C1472(New object:C1471(\
 			"calulatedAmount"; 37.62; \

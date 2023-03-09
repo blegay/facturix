@@ -24,7 +24,7 @@
 			"quantity": 20,
 			"unit": "C62",
 			"vatCategory": "S",
-			"vatRate": 20,
+			"vatRate": 19,
 			"lineTotalAmount": 198
 		}
 	],
@@ -51,6 +51,7 @@
 	},
 	"settlement": {
 		"currency": "EUR",
+		"dueDate": "2022-04-05",
 		"applicableTradeTax": [
 			{
 				"calulatedAmount": 37.62,
