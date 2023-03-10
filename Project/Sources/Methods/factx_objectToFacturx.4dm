@@ -203,9 +203,9 @@ If (ok=1)
 		//DOM SET XML ATTRIBUTE($vt_domRefTmp;"format";"102")
 		
 		//DOM SET XML ELEMENT VALUE($vt_domRefTmp;\
-																																																																																							String(Year of($vo_data.tradeDelivery.actualDelivery);"0000")+\
-																																																																																							String(Month of($vo_data.tradeDelivery.actualDelivery);"00")+\
-																																																																																							String(Day of($vo_data.tradeDelivery.actualDelivery);"00"))
+			String(Year of($vo_data.tradeDelivery.actualDelivery);"0000")+\
+			String(Month of($vo_data.tradeDelivery.actualDelivery);"00")+\
+			String(Day of($vo_data.tradeDelivery.actualDelivery);"00"))
 	End if 
 	
 	
@@ -268,6 +268,11 @@ If (ok=1)
 		DOM SET XML ATTRIBUTE:C866($vt_domRefTmp; "currencyID"; $vo_data.settlement.currency)
 		
 		factx__xmlAddRealChildElement($vt_domRefSummation; "ram:GrandTotalAmount"; $vo_data.settlement.grandTotalAmount)  //  facturx-BT-112
+		
+		If ($vo_data.settlement.totalPrepaidAmount#Null:C1517)
+			factx__xmlAddRealChildElement($vt_domRefSummation; "ram:TotalPrepaidAmount"; $vo_data.settlement.totalPrepaidAmount)  //  facturx-BT-113
+		End if 
+		
 		factx__xmlAddRealChildElement($vt_domRefSummation; "ram:DuePayableAmount"; $vo_data.settlement.duePayableAmount)  // facturx-BT-115
 	End if 
 	
