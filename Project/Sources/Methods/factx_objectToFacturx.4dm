@@ -203,9 +203,9 @@ If (ok=1)
 		//DOM SET XML ATTRIBUTE($vt_domRefTmp;"format";"102")
 		
 		//DOM SET XML ELEMENT VALUE($vt_domRefTmp;\
-			String(Year of($vo_data.tradeDelivery.actualDelivery);"0000")+\
-			String(Month of($vo_data.tradeDelivery.actualDelivery);"00")+\
-			String(Day of($vo_data.tradeDelivery.actualDelivery);"00"))
+						String(Year of($vo_data.tradeDelivery.actualDelivery);"0000")+\
+						String(Month of($vo_data.tradeDelivery.actualDelivery);"00")+\
+						String(Day of($vo_data.tradeDelivery.actualDelivery);"00"))
 	End if 
 	
 	
@@ -224,6 +224,13 @@ If (ok=1)
 		//         </ram:ApplicableHeaderTradeSettlement>
 		
 		factx__xmlAddTextChildElement($vt_domRefSettlement; "ram:InvoiceCurrencyCode"; $vo_data.settlement.currency)  // facturx-BT-5
+		
+		If (OB Is defined:C1231($vo_data.settlement; "PaymentMeans"))
+			C_TEXT:C284($vt_domRefSpecifiedTradeSettleme)  //facturx-BG-16
+			$vt_domRefSpecifiedTradeSettleme:=DOM Append XML child node:C1080($vt_domRefSettlement; XML ELEMENT:K45:20; "ram:SpecifiedTradeSettlementPaymentMeans")
+			
+			factx__xmlAddTextChildElement($vt_domRefSpecifiedTradeSettleme; "ram:TypeCode"; $vo_data.settlement.PaymentMeans.typeCode)
+		End if 
 		
 		C_OBJECT:C1216($vo_applicableTradeTax)
 		For each ($vo_applicableTradeTax; $vo_data.settlement.applicableTradeTax)
