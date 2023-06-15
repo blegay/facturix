@@ -1,4 +1,4 @@
-//%attributes = {"invisible":true,"shared":false,"preemptive":"capable","executedOnServer":false,"publishedWsdl":false,"publishedSql":false,"publishedWeb":false,"published4DMobile":{"scope":"none"},"publishedSoap":false}
+//%attributes = {"invisible":true,"preemptive":"capable"}
 
 //================================================================================
 //@xdoc-start : en
@@ -67,7 +67,7 @@ If (Length:C16($va_appVers)=4)
 				$vt_versionStr:="4D v16 R"+$va_appVers[[3]]
 			End if 
 			
-		: (($va_appVersMajeur="17") | ($va_appVersMajeur="18") | ($va_appVersMajeur="19"))
+		: (($va_appVersMajeur="17") | ($va_appVersMajeur="18") | ($va_appVersMajeur="19") | ($va_appVersMajeur="20"))
 			If ($va_appVers[[3]]="0")
 				$vt_versionStr:="4D v"+$va_appVersMajeur+"."+$va_appVers[[4]]
 			Else 

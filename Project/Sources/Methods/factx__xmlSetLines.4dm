@@ -5,13 +5,9 @@
 //@scope : private
 //@attributes :
 //@deprecated : no
-//@description : This method/function returns
-//@parameter[0-OUT-paramName-TEXT] : ParamDescription
-//@parameter[1-IN-paramName-OBJECT] : ParamDescription
-//@parameter[2-IN-paramName-POINTER] : ParamDescription (not modified)
-//@parameter[3-INOUT-paramName-POINTER] : ParamDescription (modified)
-//@parameter[4-OUT-paramName-POINTER] : ParamDescription (modified)
-//@parameter[5-IN-paramName-LONGINT] : ParamDescription (optional, default value : 1)
+//@description : This method add lines to the transaction element
+//@parameter[1-IN-domRefTransaction-TEXT] : transaction element dom ref
+//@parameter[2-IN-lines-COLLECTION] : lines
 //@notes :
 //@example : factx__xmlSetLines
 //@see :
@@ -42,7 +38,6 @@ For each ($vo_line; $c_lines)
 	C_TEXT:C284($vt_domRefTmp)
 	$vt_domRefTmp:=DOM Append XML child node:C1080($vt_domRefTradeLineItem; XML ELEMENT:K45:20; "ram:SpecifiedTradeProduct")
 	factx__xmlAddTextChildElement($vt_domRefTmp; "ram:Name"; $vo_line.name)
-	
 	
 	
 	$vt_domRefTmp:=DOM Append XML child node:C1080($vt_domRefTradeLineItem; XML ELEMENT:K45:20; "ram:SpecifiedLineTradeAgreement")
