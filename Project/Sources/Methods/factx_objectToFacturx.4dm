@@ -1,4 +1,5 @@
 //%attributes = {"shared":true,"invisible":false,"preemptive":"capable","executedOnServer":false,"publishedWsdl":false,"publishedSql":false,"publishedWeb":false,"published4DMobile":{"scope":"none"},"publishedSoap":false}
+//%attributes = {"shared":true,"invisible":false,"preemptive":"capable","executedOnServer":false,"publishedWsdl":false,"publishedSql":false,"publishedWeb":false,"published4DMobile":{"scope":"none"},"publishedSoap":false}
 //================================================================================
 //@xdoc-start : en
 //@name : factx_objectToFacturx
@@ -203,9 +204,9 @@ If (ok=1)
 		//DOM SET XML ATTRIBUTE($vt_domRefTmp;"format";"102")
 		
 		//DOM SET XML ELEMENT VALUE($vt_domRefTmp;\
-			String(Year of($vo_data.tradeDelivery.actualDelivery);"0000")+\
-			String(Month of($vo_data.tradeDelivery.actualDelivery);"00")+\
-			String(Day of($vo_data.tradeDelivery.actualDelivery);"00"))
+						String(Year of($vo_data.tradeDelivery.actualDelivery);"0000")+\
+						String(Month of($vo_data.tradeDelivery.actualDelivery);"00")+\
+						String(Day of($vo_data.tradeDelivery.actualDelivery);"00"))
 	End if 
 	
 	
@@ -224,6 +225,13 @@ If (ok=1)
 		//         </ram:ApplicableHeaderTradeSettlement>
 		
 		factx__xmlAddTextChildElement($vt_domRefSettlement; "ram:InvoiceCurrencyCode"; $vo_data.settlement.currency)  // facturx-BT-5
+		
+		If ($vo_data.settlement.paymentMeans#Null:C1517)
+			C_TEXT:C284($vt_domRefSpecifiedTrdSttlmnt)
+			$vt_domRefSpecifiedTrdSttlmnt:=DOM Append XML child node:C1080($vt_domRefSettlement; XML ELEMENT:K45:20; "ram:SpecifiedTradeSettlementPaymentMeans")  // facturx-BG-16
+			
+			factx__xmlAddTextChildElement($vt_domRefSpecifiedTrdSttlmnt; "ram:TypeCode"; $vo_data.settlement.paymentMeans.typeCode)  // facturx-BT-81
+		End if 
 		
 		C_OBJECT:C1216($vo_applicableTradeTax)
 		For each ($vo_applicableTradeTax; $vo_data.settlement.applicableTradeTax)

@@ -97,6 +97,22 @@ Case of
 		$vo_data.settlement.currency:="EUR"  // facturx-BT-5
 		$vo_data.settlement.dueDate:=!2022-04-05!  // facturx-BT-9
 		
+		$vo_data.settlement.paymentMeans:=New object:C1471
+		$vo_data.settlement.paymentMeans.typeCode:="30"  // BT-81
+		// En particulier, les codes suivants peuvent être utilisés:
+		// 10 : Espèces
+		// 20 : Chèque
+		// 30 : Virement (inclut Virement SEPA pour CHORUSPRO)
+		// 42 : Paiement sur compte bancaire
+		// 48 : Paiement par carte bancaire
+		// 49 : prélèvement (inclut Prélèvement SEPA pour CHORUSPRO)
+		// 57 : Moyen de paiement déjà défini entre les parties
+		// 58 : Virement SEPA (non utilisé pour CHORUSPRO : code 30)
+		// 59 : Prélèvement SEPA (non utilisé pour CHORUSPRO : code 49)
+		// 97 : Report
+		// ZZZ : moyen de paiementprovisoire défini entre partenaires commerciaux
+		
+		
 		$vo_data.settlement.applicableTradeTax:=New collection:C1472(New object:C1471(\
 			"calulatedAmount"; 37.62; \
 			"basisAmount"; 198; \

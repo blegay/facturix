@@ -52,6 +52,9 @@
 	"settlement": {
 		"currency": "EUR",
 		"dueDate": "2022-04-05",
+		"paymentMeans": {
+			"typeCode": "30"
+		},
 		"applicableTradeTax": [
 			{
 				"calulatedAmount": 37.62,
