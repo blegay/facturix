@@ -97,8 +97,8 @@ Case of
 		$vo_data.settlement.currency:="EUR"  // facturx-BT-5
 		$vo_data.settlement.dueDate:=!2022-04-05!  // facturx-BT-9
 		
-		$vo_data.settlement.paymentMeans:=New object:C1471
-		$vo_data.settlement.paymentMeans.typeCode:="30"  // BT-81
+		$vo_data.settlement.paymentMeans:=New object:C1471  // facturx-BG-16
+		$vo_data.settlement.paymentMeans.typeCode:="30"  //  facturx-BT-81
 		// En particulier, les codes suivants peuvent être utilisés:
 		// 10 : Espèces
 		// 20 : Chèque
