@@ -28,6 +28,8 @@ Technical information about Factur-X can be found here : [https://fnfe-mpe.org]
 
 See "Factur-X-1.0.06-2022-03-01-FINAL-FR.zip"
 
+More information can be found [here](https://entreprendre.service-public.fr/actualites/A16585?eml-publisher=hubscore&eml-name=Emailing-es-39-%5BBIE_405_20240411%5D-20240411&eml-mediaplan=%5Bhttps://entreprendre.service-public.fr/actualites/A16585%5D)
+
 Factur-X milestones in France
 =
 
